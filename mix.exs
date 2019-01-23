@@ -1,8 +1,10 @@
 defmodule Man.Mixfile do
   use Mix.Project
 
+  @version "2.3.3"
   def project do
     [
+      version: @version,
       app: :man_api,
       package: package(),
       version: "0.1.0",
@@ -67,7 +69,8 @@ defmodule Man.Mixfile do
       {:plug_logger_json, "~> 0.5"},
       {:ecto_logger_json, "~> 0.1"},
       {:excoveralls, "~> 0.8.1", only: [:dev, :test]},
-      {:credo, "~> 0.9.3", only: [:dev, :test]}
+      {:credo, "~> 0.9.3", only: [:dev, :test]},
+      {:git_ops, "~> 0.6.0", only: [:dev]}
     ]
   end
 
