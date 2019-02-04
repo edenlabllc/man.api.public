@@ -1,11 +1,13 @@
 defmodule Man.Repo.Migrations.UpdateContractRequestPrintoutForm do
+  @moduledoc false
+
   use Ecto.Migration
 
   import Ecto.Changeset
   import Ecto.Query
 
-  alias Man.Templates.Template
   alias Man.Repo
+  alias Man.Templates.Template
 
   def change do
     template_body = File.read!(Application.app_dir(:man_api, "priv/static/RCRPF.html.eex"))
