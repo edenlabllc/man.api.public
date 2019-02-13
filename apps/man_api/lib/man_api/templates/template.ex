@@ -26,8 +26,8 @@ end
 
 defmodule Man.Templates.Template.Locale do
   @moduledoc false
-  use Ecto.Schema
 
+  use Ecto.Schema
   import Ecto.Changeset
 
   @primary_key false

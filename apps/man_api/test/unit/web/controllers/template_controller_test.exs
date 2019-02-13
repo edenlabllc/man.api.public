@@ -28,10 +28,9 @@ defmodule Man.Web.TemplateControllerTest do
   end
 
   test "lists and filters all entries on index", %{conn: conn} do
-    response =
-      conn
-      |> get(template_path(conn, :index))
-      |> json_response(200)
+    conn
+    |> get(template_path(conn, :index))
+    |> json_response(200)
 
     %Template{id: id1} = FixturesFactory.create(:template)
     %Template{id: id2} = FixturesFactory.create(:template, title: "other title", labels: ["label/one", "label/two"])

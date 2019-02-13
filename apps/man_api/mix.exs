@@ -56,11 +56,13 @@ defmodule Man.Mixfile do
       {:confex, "~> 3.2"},
       {:ecto, "~> 2.1"},
       {:postgrex, "~> 0.13.2"},
-      {:cowboy, "~> 1.1"},
+      {:plug_cowboy, "~> 2.0"},
+      {:plug, "~> 1.7"},
+      {:jason, "~> 1.0"},
       {:httpoison, "~> 1.2"},
       {:poison, "~> 3.1"},
-      {:phoenix, "~> 1.3.0-rc"},
-      {:eview, "~> 0.12.2"},
+      {:phoenix, "~> 1.4.0"},
+      {:eview, "~> 0.15.0"},
       {:phoenix_ecto, "~> 3.2"},
       {:scrivener_ecto, "~> 1.0"},
       {:nex_json_schema, ">= 0.7.2"},
@@ -68,7 +70,7 @@ defmodule Man.Mixfile do
       {:earmark, "~> 1.2"},
       {:ecto_paging, "~> 0.6.1"},
       {:pdf_generator, "~> 0.3.5"},
-      {:plug_logger_json, "~> 0.5"},
+      {:plug_logger_json, "~> 0.6"},
       {:ecto_logger_json, "~> 0.1"}
     ]
   end
