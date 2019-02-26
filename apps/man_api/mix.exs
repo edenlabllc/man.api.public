@@ -70,8 +70,7 @@ defmodule Man.Mixfile do
       {:earmark, "~> 1.2"},
       {:ecto_paging, "~> 0.6.1"},
       {:pdf_generator, "~> 0.3.5"},
-      {:plug_logger_json, "~> 0.6"},
-      {:ecto_logger_json, "~> 0.1"}
+      {:ehealth_logger, git: "https://github.com/edenlabllc/ehealth_logger.git"}
     ]
   end
 

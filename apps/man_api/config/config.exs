@@ -16,7 +16,7 @@ config :man_api, Man.Repo,
   password: {:system, "DB_PASSWORD", "postgres"},
   hostname: {:system, "DB_HOST", "localhost"},
   port: {:system, :integer, "DB_PORT", 5432},
-  loggers: [{Ecto.LoggerJSON, :log, [:info]}]
+  loggers: [{EhealthLogger.Ecto, :log, [:info]}]
 
 # This configuration file is loaded before any dependency and
 # is restricted to this project.
@@ -35,10 +35,12 @@ config :man_api, Man.Web.Endpoint,
 # Cache PDF output that is costly to render
 config :man_api, cache_pdf_output: {:system, :boolean, "CACHE_PDF_OUTPUT", false}
 
-# Configures Elixir's Logger
-config :logger, :console,
-  format: "$message\n",
-  handle_otp_reports: true,
+config :logger_json, :backend,
+  formatter: EhealthLogger.Formatter,
+  metadata: :all
+
+config :logger,
+  backends: [LoggerJSON],
   level: :info
 
 # This requires installing wkhtmltopdf onto developers machine

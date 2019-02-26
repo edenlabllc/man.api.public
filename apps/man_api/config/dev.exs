@@ -18,5 +18,3 @@ config :man_api, Man.Web.Endpoint,
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
-
-config :logger, :console, format: "$message\n"

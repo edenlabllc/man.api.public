@@ -10,7 +10,8 @@ config :man_api, Man.Repo,
   username: {:system, "DB_USER"},
   password: {:system, "DB_PASSWORD"},
   hostname: {:system, "DB_HOST"},
-  port: {:system, :integer, "DB_PORT"}
+  port: {:system, :integer, "DB_PORT"},
+  loggers: [{EhealthLogger.Ecto, :log, [:info]}]
 
 # For production, we often load configuration from external
 # sources, such as your system environment. For this reason,
@@ -45,5 +46,3 @@ config :phoenix, :filter_parameters, ["password", "secret", "token", "password_c
 config :phoenix, :serve_endpoints, true
 
 config :pdf_generator, wkhtml_path: "/bin/wkhtmltopdf"
-
-config :logger, level: :info, handle_otp_reports: true
