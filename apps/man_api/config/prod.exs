@@ -11,7 +11,7 @@ config :man_api, Man.Repo,
   password: {:system, "DB_PASSWORD"},
   hostname: {:system, "DB_HOST"},
   port: {:system, :integer, "DB_PORT"},
-  loggers: [{EhealthLogger.Ecto, :log, [:info]}]
+  pool_size: {:system, :integer, "DB_POOL_SIZE", 10}
 
 # For production, we often load configuration from external
 # sources, such as your system environment. For this reason,

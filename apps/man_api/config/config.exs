@@ -10,13 +10,11 @@ config :phoenix, :json_library, Jason
 
 # Configure your database
 config :man_api, Man.Repo,
-  adapter: Ecto.Adapters.Postgres,
   database: {:system, "DB_NAME", "man_dev"},
   username: {:system, "DB_USER", "postgres"},
   password: {:system, "DB_PASSWORD", "postgres"},
   hostname: {:system, "DB_HOST", "localhost"},
-  port: {:system, :integer, "DB_PORT", 5432},
-  loggers: [{EhealthLogger.Ecto, :log, [:info]}]
+  port: {:system, :integer, "DB_PORT", 5432}
 
 # This configuration file is loaded before any dependency and
 # is restricted to this project.

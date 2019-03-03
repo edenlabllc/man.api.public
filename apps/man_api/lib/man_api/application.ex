@@ -22,6 +22,7 @@ defmodule Man do
     ]
 
     opts = [strategy: :one_for_one, name: Man.Supervisor]
+    :telemetry.attach("log-handler", [:man, :repo, :query], &Man.TelemetryHandler.handle_event/4, nil)
     Supervisor.start_link(children, opts)
   end
 

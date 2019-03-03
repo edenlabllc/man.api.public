@@ -11,7 +11,8 @@ defmodule Man.ReleaseTasks do
   @start_apps [
     :logger,
     :postgrex,
-    :ecto
+    :ecto,
+    :ecto_sql
   ]
   @app :man_api
   @repo Man.Repo
@@ -44,7 +45,7 @@ defmodule Man.ReleaseTasks do
     Application.load(@app)
     # If you don't include Repo in application supervisor start it here manually
     IO.puts("Starting repos..")
-    repo.start_link(pool_size: 1)
+    repo.start_link()
     repo
   end
 

@@ -74,7 +74,7 @@ defmodule Man.Templates.Renderer do
   end
 
   defp render_output(html, %{"format" => "application/json"} = attrs, _cache?) do
-    case Poison.encode(%{body: html, params: attrs}) do
+    case Jason.encode(%{body: html, params: attrs}) do
       {:ok, json} ->
         {:ok, {"application/json", json}}
 

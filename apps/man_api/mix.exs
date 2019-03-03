@@ -1,4 +1,6 @@
 defmodule Man.Mixfile do
+  @moduledoc false
+
   use Mix.Project
 
   def project do
@@ -37,38 +39,24 @@ defmodule Man.Mixfile do
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
-  # Dependencies can be Hex packages:
-  #
-  #   {:mydep, "~> 0.3.0"}
-  #
-  # Or git/path repositories:
-  #
-  #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
-  #
-  # To depend on another app inside the umbrella:
-  #
-  #   {:myapp, in_umbrella: true}
-  #
-  # Type "mix help deps" for more examples and options
   defp deps do
     [
       {:confex_config_provider, "~> 0.1.0"},
-      {:confex, "~> 3.2"},
-      {:ecto, "~> 2.1"},
-      {:postgrex, "~> 0.13.2"},
+      {:confex, "~> 3.4"},
+      {:ecto, "~> 3.0"},
+      {:ecto_sql, "~> 3.0"},
+      {:postgrex, "~> 0.14.1"},
       {:plug_cowboy, "~> 2.0"},
       {:plug, "~> 1.7"},
-      {:jason, "~> 1.0"},
+      {:jason, "~> 1.1"},
       {:httpoison, "~> 1.2"},
-      {:poison, "~> 3.1"},
       {:phoenix, "~> 1.4.0"},
       {:eview, "~> 0.15.0"},
-      {:phoenix_ecto, "~> 3.2"},
-      {:scrivener_ecto, "~> 1.0"},
+      {:phoenix_ecto, "~> 4.0"},
+      {:scrivener_ecto, git: "https://github.com/AlexKovalevych/scrivener_ecto.git", branch: "fix_page_number"},
       {:nex_json_schema, ">= 0.7.2"},
       {:bbmustache, "~> 1.4"},
       {:earmark, "~> 1.2"},
-      {:ecto_paging, "~> 0.6.1"},
       {:pdf_generator, "~> 0.3.5"},
       {:ehealth_logger, git: "https://github.com/edenlabllc/ehealth_logger.git"}
     ]
@@ -85,12 +73,6 @@ defmodule Man.Mixfile do
     ]
   end
 
-  # Aliases are shortcuts or tasks specific to the current project.
-  # For example, to create, migrate and run the seeds file at once:
-  #
-  #     $ mix ecto.setup
-  #
-  # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
