@@ -28,7 +28,8 @@ config :mime, :types, %{
 config :man_api, Man.Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "BN71lljHhjDJP7n8TnIg4f+slrxjkbbV4wQDh7RervDFLd3bqCD1CE8JA5UW1AY7",
-  render_errors: [view: EView.Views.PhoenixError, accepts: ~w(json)]
+  render_errors: [view: EView.Views.PhoenixError, accepts: ~w(json)],
+  instrumenters: [LoggerJSON.Phoenix.Instruments]
 
 # Cache PDF output that is costly to render
 config :man_api, cache_pdf_output: {:system, :boolean, "CACHE_PDF_OUTPUT", false}
