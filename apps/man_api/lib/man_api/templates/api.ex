@@ -239,4 +239,13 @@ defmodule Man.Templates.API do
         changeset
     end
   end
+
+  def update_template_body!(title, template_path) when is_binary(title) and is_binary(template_path) do
+    template_body = File.read!(template_path)
+
+    Template
+    |> Repo.get_by!(title: title)
+    |> cast(%{body: template_body}, ~w(body)a)
+    |> Repo.update!()
+  end
 end

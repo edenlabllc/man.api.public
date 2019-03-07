@@ -49,6 +49,8 @@ defmodule Man.Templates.Renderer do
   end
 
   defp render_html(%Template{syntax: "mustache", body: body}, attrs) do
+    attrs = Map.put(attrs, "year", Date.utc_today().year)
+
     case :bbmustache.render(body, map_to_keyword(attrs), key_type: :atom) do
       html when is_binary(html) ->
         {:ok, html}
