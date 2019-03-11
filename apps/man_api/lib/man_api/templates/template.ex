@@ -14,7 +14,7 @@ defmodule Man.Templates.Template do
 
     embeds_many(:locales, Man.Templates.Template.Locale, on_replace: :delete)
 
-    timestamps()
+    timestamps(type: :utc_datetime)
   end
 
   def changeset(%__MODULE__{} = template, attrs) do
