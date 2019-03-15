@@ -25,17 +25,4 @@ defmodule Man do
     :telemetry.attach("log-handler", [:man, :repo, :query], &Man.TelemetryHandler.handle_event/4, nil)
     Supervisor.start_link(children, opts)
   end
-
-  # Tell Phoenix to update the endpoint configuration
-  # whenever the application is updated.
-  def config_change(changed, _new, removed) do
-    Endpoint.config_change(changed, removed)
-    :ok
-  end
-
-  # Loads configuration in `:on_init` callbacks and replaces `{:system, ..}` tuples via Confex
-  @doc false
-  def load_from_system_env(config) do
-    {:ok, Resolver.resolve(config)}
-  end
 end
