@@ -198,7 +198,7 @@ defmodule Man.Templates.API do
     template_changeset(template, %{})
   end
 
-  defp template_changeset(%Template{} = template, attrs) do
+  def template_changeset(%Template{} = template, attrs) do
     template
     |> cast(attrs, @fields)
     |> validate_required(@required_fields)
