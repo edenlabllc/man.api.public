@@ -79,21 +79,18 @@
                     {{ l10n.hasRegisteredInEhealth }}
                   </p>
                   <p style="margin: 0 0 20px 0; padding: 0;">
-                    {{ l10n.startText }}: <b>"{{ doctor_role }}"</b>
+                    {{ l10n.startText }}<b>"{{ doctor_role }}"</b>
                   </p>
                   <p style="margin: 0 0 20px 0; padding: 0;">
-                    <b>{{ l10n.toAcceptInvitationFollowTheLink }}</b
-                    >:
-                    <a
-                      href="{{ l10n.endpoint }}/invite?invite={{ request_id }}"
-                      style="color: #2892f0; text-decoration: none; font-weight: 700; outline: none;"
-                      >{{ l10n.endpoint }}/invite?invite={{ request_id }}</a
-                    >
+                    {{ l10n.toAcceptInvitationFollowTheLink }}
+                    <a href="{{ l10n.endpoint }}/invite?invite={{ request_id }}" style="color: #2892f0; text-decoration: none; outline: none;">
+                      {{ l10n.endpoint }}/invite?invite={{ request_id }}
+                    </a>
                   </p>
                   <p style="margin: 0 0 20px 0; padding: 0;">
                     <a
                       href="https://zakon.rada.gov.ua/laws/show/411-2018-%D0%BF"
-                      style="color: #2892f0; text-decoration: none; font-weight: 700; outline: none;"
+                      style="color: #2892f0; text-decoration: none; outline: none;"
                       >{{ l10n.rulesText }}</a>
                   </p>
                   <p style="margin: 0 0 20px 0; padding: 0;">
@@ -107,17 +104,17 @@
                 valign="middle"
                 align="left"
                 class="body"
-                style="padding: 70px; background-color: #fff;"
+                style="padding: 50px; background-color: #fff;"
               >
                 <div>
                   {{ l10n.thanks }}<br />
-                  <a
-                      href="http://nszu.gov.ua/"
-                      style="color: #2892f0; text-decoration: none; font-weight: 700; outline: none;"
-                      >{{ l10n.nszuLink }}</a> {{ l10n.and }} <a
-                      href="https://ehealth.gov.ua/"
-                      style="color: #2892f0; text-decoration: none; font-weight: 700; outline: none;"
-                      >{{ l10n.dpLink }}</a><br />
+                  <a href="http://nszu.gov.ua/" style="color: #2892f0; text-decoration: none; font-weight: 700; outline: none;">
+                    {{ l10n.nszuLink }}
+                  </a> {{ l10n.and }} 
+                  <a href="https://ehealth.gov.ua/" style="color: #2892f0; text-decoration: none; font-weight: 700; outline: none;">
+                    {{ l10n.dpLink }}
+                  </a>
+                  <br />
                   <small>{{ l10n.allRightsReserved }}</small>
                 </div>
               </td>
