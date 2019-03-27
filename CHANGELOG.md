@@ -5,6 +5,31 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [2.6.0](https://github.com/edenlabllc/man.api/compare/2.5.0...2.6.0) (2019-3-27)
+
+
+
+
+### Features:
+
+* added migration to update CRPF form (#24)
+
+* updated CRPF #8, RCRPF #2 (#21)
+
+* updated CRPF #7 (#19)
+
+### Bug Fixes:
+
+* update credentials, employee registration, invitation templates (#35)
+
+* apply new changes for templates (#33)
+
+* refactor(man_api): return timestamps with timezones (#18)
+
+* links for invitation letters (#17)
+
+* phoenix errors logging (#15)
+
 ## [2.5.0](https://github.com/edenlabllc/man.api/compare/2.4.0...2.5.0) (2019-3-4)
 
 
