@@ -6,7 +6,7 @@ defmodule Man.Repo do
   """
   alias Confex.Resolver
   use Ecto.Repo, otp_app: :man_api, adapter: Ecto.Adapters.Postgres
-  use Scrivener, page_size: 50, max_page_size: 100, options: [allow_out_of_range_pages: true]
+  use Scrivener, page_size: 50, max_page_size: 100, options: [allow_overflow_page_number: true]
 
   @doc """
   Dynamically loads the repository configuration from the environment variables.
