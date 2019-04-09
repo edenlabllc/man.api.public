@@ -294,7 +294,7 @@
             <p class="block"> <span class="underline"><%=get_in(assigns, ~w(issue_city)a) %></span><span
                     class="underline"><%=get_in(assigns, ~w(nhs_signed_date)a) %></span></p>
         </header>
-        <p> НСЗУ, в особі <span class="underline">Голови <%=if get_in(assigns, ~w(nhs_signer party second_name)a) do %>
+        <p> НСЗУ, в особі <span class="underline">Голови, <%=if get_in(assigns, ~w(nhs_signer party second_name)a) do %>
                 <%=get_in(assigns, ~w(nhs_signer party last_name)a) %>
                 <%=get_in(assigns, ~w(nhs_signer party first_name)a) %>
                 <%=get_in(assigns, ~w(nhs_signer party second_name)a) %><% else %>
@@ -302,7 +302,7 @@
                 <%=get_in(assigns, ~w(nhs_signer party first_name)a) %><% end %></span>, що діє на підставі <span
                 class="underline"><%=get_in(assigns, ~w(nhs_signer_base)a) %></span> (далі – замовник), з однієї
             сторони, і <span class="underline"><%=get_in(assigns, ~w(contractor_legal_entity name)a) %></span> в особі
-            <%=get_in(assigns, ~w(contractor_owner position)a) %> <span
+            <%=get_in(assigns, ~w(contractor_owner position)a) %>, <span
                 class="underline"><%=if get_in(assigns, ~w(contractor_owner party second_name)a) do %>
                 <%=get_in(assigns, ~w(contractor_owner party last_name)a) %>
                 <%=get_in(assigns, ~w(contractor_owner party first_name)a) %>
@@ -699,7 +699,7 @@
                         <p> Назва банку: <%= get_in(assigns, ~w(contractor_payment_details bank_name)a) %></p>
                         <div> Розрахунковий рахунок:
                             <%=get_in(assigns, ~w(contractor_payment_details payer_account)a) %><p class="center"> <span
-                                    class="underline fullwidth"><%=get_in(assigns, ~w(contractor_owner position)a) %>
+                                    class="underline fullwidth"><%=get_in(assigns, ~w(contractor_owner position)a) %>,
                                     <%=if get_in(assigns, ~w(contractor_owner party second_name)a) do %>
                                     <%=get_in(assigns, ~w(contractor_owner party last_name)a) %>
                                     <%=get_in(assigns, ~w(contractor_owner party first_name)a) %>
@@ -717,7 +717,7 @@
                         <p>МФО: 820172</p>
                         <p>Назва банку: ДКСУ у м. Києві</p>
                         <div> Розрахунковий рахунок: 35210039063754<p class="center"> <span
-                                    class="underline fullwidth">Голова
+                                    class="underline fullwidth">Голова,
                                     <%=if get_in(assigns, ~w(nhs_signer party second_name)a) do %>
                                     <%=get_in(assigns, ~w(nhs_signer party last_name)a) %>
                                     <%=get_in(assigns, ~w(nhs_signer party first_name)a) %>
@@ -801,7 +801,8 @@
                     системі, та застосовних тарифів і коригувальних коефіцієнтів.</li>
                 <li> Інші умови: <br /> Надавач вносить медичні записи, записи про рецепти, записи про направлення та
                     зведені відомості про надані послуги пацієнтам у разі технічної реалізації такого функціоналу в
-                    електронній системі охорони здоров’я.</li>
+                    електронній системі охорони здоров’я. <br />
+                    <%=get_in(assigns, ~w(misc)a) %></li>
             </ol>
         </section>
     </section>
