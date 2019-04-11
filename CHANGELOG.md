@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [2.7.1](https://github.com/edenlabllc/man.api/compare/2.7.0...2.7.1) (2019-4-11)
+
+
+
+
+### Bug Fixes:
+
+* minify drpf template (#44)
+
 ## [2.7.0](https://github.com/edenlabllc/man.api/compare/2.6.0...2.7.0) (2019-4-11)
 
 
