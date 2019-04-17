@@ -302,8 +302,11 @@
                 <%=get_in(assigns, ~w(nhs_signer party first_name)a) %><% end %></span>, що діє на підставі <span
                 class="underline"><%=get_in(assigns, ~w(nhs_signer_base)a) %></span> (далі – замовник), з однієї
             сторони, і <span class="underline"><%=get_in(assigns, ~w(contractor_legal_entity name)a) %></span> в особі
-            <%=get_in(assigns, ~w(contractor_owner position)a) %>, <span
-                class="underline"><%=if get_in(assigns, ~w(contractor_owner party second_name)a) do %>
+            <span class="underline">
+                <%=if get_in(assigns, ~w(contractor_owner position)a) do %>
+                  <%=get_in(assigns, ~w(contractor_owner position)a) %>,
+                <% end %>
+                <%=if get_in(assigns, ~w(contractor_owner party second_name)a) do %>
                 <%=get_in(assigns, ~w(contractor_owner party last_name)a) %>
                 <%=get_in(assigns, ~w(contractor_owner party first_name)a) %>
                 <%=get_in(assigns, ~w(contractor_owner party second_name)a) %><% else %>
@@ -699,7 +702,10 @@
                         <p> Назва банку: <%= get_in(assigns, ~w(contractor_payment_details bank_name)a) %></p>
                         <div> Розрахунковий рахунок:
                             <%=get_in(assigns, ~w(contractor_payment_details payer_account)a) %><p class="center"> <span
-                                    class="underline fullwidth"><%=get_in(assigns, ~w(contractor_owner position)a) %>,
+                                    class="underline fullwidth">
+                                    <%=if get_in(assigns, ~w(contractor_owner position)a) do %>
+                                      <%=get_in(assigns, ~w(contractor_owner position)a) %>,
+                                    <% end %>
                                     <%=if get_in(assigns, ~w(contractor_owner party second_name)a) do %>
                                     <%=get_in(assigns, ~w(contractor_owner party last_name)a) %>
                                     <%=get_in(assigns, ~w(contractor_owner party first_name)a) %>

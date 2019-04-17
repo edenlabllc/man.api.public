@@ -302,7 +302,10 @@
                     class="underline"> <%=get_in(assigns, ~w(contractor_legal_entity name)a) %> </span>
                 <p class="small center">(найменування суб’єкта господарювання або прізвище, ім’я та по батькові фізичної
                     особи - підприємця, що надають медичні послуги)</p> в особі <span
-                    class="underline"><%=get_in(assigns, ~w(contractor_owner position)a) %>,
+                    class="underline">
+                    <%=if get_in(assigns, ~w(contractor_owner position)a) do %>
+                      <%=get_in(assigns, ~w(contractor_owner position)a) %>,
+                    <% end %>
                     <%=if get_in(assigns, ~w(contractor_owner party second_name)a) do %>
                     <%=get_in(assigns, ~w(contractor_owner party last_name)a) %>
                     <%=get_in(assigns, ~w(contractor_owner party first_name)a) %>
@@ -584,7 +587,7 @@
                         <p> МФО: 820172</p>
                         <p> Назва банку: ДКСУ у м. Києві</p>
                         <p> Розрахунковий рахунок: <span class="underline halfwidth">35217032063754</span>
-                            <p class="center"> <span class="underline fullwidth">Голова, 
+                            <p class="center"> <span class="underline fullwidth">Голова,
                                     <%=if get_in(assigns, ~w(nhs_signer party second_name)a) do %>
                                     <%=get_in(assigns, ~w(nhs_signer party last_name)a) %>
                                     <%=get_in(assigns, ~w(nhs_signer party first_name)a) %>
@@ -623,7 +626,10 @@
                         <p> Назва банку: <%=get_in(assigns, ~w(contractor_payment_details bank_name)a) %></p>
                         <div> Розрахунковий рахунок:
                             <%=get_in(assigns, ~w(contractor_payment_details payer_account)a) %><p class="center"> <span
-                                    class="underline fullwidth"><%=get_in(assigns, ~w(contractor_owner position)a) %>,
+                                    class="underline fullwidth">
+                                    <%=if get_in(assigns, ~w(contractor_owner position)a) do %>
+                                      <%=get_in(assigns, ~w(contractor_owner position)a) %>,
+                                    <% end %>
                                     <%=if get_in(assigns, ~w(contractor_owner party second_name)a) do %>
                                     <%=get_in(assigns, ~w(contractor_owner party last_name)a) %>
                                     <%=get_in(assigns, ~w(contractor_owner party first_name)a) %>
