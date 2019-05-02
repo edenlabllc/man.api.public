@@ -3,7 +3,6 @@ defmodule Man do
   This is an entry point of Man application.
   """
   use Application
-  alias Confex.Resolver
   alias Man.Web.Endpoint
 
   def start(_type, _args) do

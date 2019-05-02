@@ -58,7 +58,8 @@ defmodule Man.Mixfile do
       {:bbmustache, "~> 1.4"},
       {:earmark, "~> 1.2"},
       {:pdf_generator, "~> 0.3.5"},
-      {:ehealth_logger, git: "https://github.com/edenlabllc/ehealth_logger.git"}
+      {:ehealth_logger, git: "https://github.com/edenlabllc/ehealth_logger.git"},
+      {:kube_rpc, "~> 0.2.0"}
     ]
   end
 
